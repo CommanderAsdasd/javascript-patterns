@@ -1,0 +1,21 @@
+<script>
+    /*Description: constructs complex objects by separating constru*/
+
+    function getBeerById(id, callback) {
+        // Make request for beer by ID, then return the beer data.
+        asyncReqest('GET', 'beer.uri?if=' + id, function (resp) {
+            //callback
+            callback(resp.responseText);
+        });
+    }
+
+    var el = document.querySelector('#test');
+    el.addEventListener('click', getBeerByIdBridge, false);
+
+    function getBeerByIdBridge(e) {
+        geetBeerById(this.id, function (beer)) {
+            console.log('Requested Beer: ' + beer);
+        }
+    }
+
+</script>
